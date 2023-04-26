@@ -18,14 +18,20 @@ function Settings() {
 
     const openGallery = async () => {
         const gallery = await launchImageLibrary({mediaType:'mixed'});
-        console.log(gallery);
+        // console.log(gallery);
     }
 
     const openCamera = async () => {
         const camera = await launchCamera({mediaType:'photo', saveToPhotos: false});
-        console.log(camera);
-        setPhoto(camera.uri);
+        let imagePath = camera.assets.map((item) => item.uri);
+        // console.log(camera);
+        setPhoto(imagePath[0]);
+        // console.log(imagePath[0]);
     }
+
+    useEffect(()=>{
+        console.log(photo);
+    })
 
     return (
         <SafeAreaView style={styles.container}>
