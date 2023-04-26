@@ -34,7 +34,7 @@ function Friends() {
 
     useEffect(() => {
         getUser();
-    })
+    },[])
 
     return (
         <SafeAreaView style={styles.container}>

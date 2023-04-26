@@ -2,29 +2,14 @@ import * as React from 'react';
 import { Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import Friends from './src/screens/Friends';
+import Settings from './src/screens/Settings';
 
 function Home() {
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
       <Text>Home!</Text>
-    </View>
-  );
-}
-
-// function Friends() {
-//   return (
-//     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-//       <Text>Friends!</Text>
-//     </View>
-//   );
-// }
-
-function Settings() {
-  return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Settings!</Text>
     </View>
   );
 }
@@ -36,7 +21,7 @@ function MyTabs() {
     <Tab.Navigator
       initialRouteName="Friends"
       screenOptions={{
-        tabBarActiveTintColor: '#e91e63',
+        tabBarActiveTintColor: '#1f883d',
       }}
     >
       <Tab.Screen
@@ -45,7 +30,7 @@ function MyTabs() {
         options={{
           tabBarLabel: 'Home',
           tabBarIcon: ({ color, size }) => (
-            <MaterialCommunityIcons name="home" color={color} size={size} />
+            <MaterialIcons name="home" color={color} size={size} />
           ),
         }}
       />
@@ -55,7 +40,7 @@ function MyTabs() {
         options={{
           tabBarLabel: 'Friends',
           tabBarIcon: ({ color, size }) => (
-            <MaterialCommunityIcons name="account" color={color} size={size} />
+            <MaterialIcons name="person" color={color} size={size} />
           ),
         }}
       />
@@ -65,7 +50,7 @@ function MyTabs() {
         options={{
           tabBarLabel: 'Settings',
           tabBarIcon: ({ color, size }) => (
-            <MaterialCommunityIcons name="settings-helper" color={color} size={size} />
+            <MaterialIcons name="settings" color={color} size={size} />
           ),
         }}
       />
